@@ -1,7 +1,10 @@
 
 from typing import Dict, Any, List
 
-class SGD:
+class Optimizer:
+    pass
+
+class SGD(Optimizer):
     def __init__(self, params : Dict[str, Any], lr : float = ...) -> None: ...
     def zero_grad(self) -> None: ...
     def step(self) -> None: ...
