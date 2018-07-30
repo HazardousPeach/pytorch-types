@@ -1,7 +1,12 @@
-from torch import Tensor
-from typing import Any, Union, Tuple, Iterator
+from torch import Tensor, FloatTensor, LongTensor
+from typing import Any, Union, Tuple, Iterator, overload
 
+@overload
 def Variable(t : Tensor, requires_grad : bool = True) -> Tensor: ...
+@overload
+def Variable(t : FloatTensor, requires_grad : bool = True) -> FloatTensor: ...
+@overload
+def Variable(t : LongTensor, requires_grad : bool = True) -> LongTensor: ...
 
 # class Variable:
 #       data = ... # type: Tensor
