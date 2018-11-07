@@ -1,12 +1,13 @@
 from torch import Tensor
+from torch.utils.data.dataset import Dataset
 from typing import Iterator, Tuple, List
 
-class TensorDataset:
+class TensorDataset(Dataset):
       def __init__(self, *data : Tensor) -> None: ...
       ...
 
 class DataLoader:
-      def __init__(self, dataset : TensorDataset,
+      def __init__(self, dataset : Dataset,
                    batch_size : int = ...,
                    shuffle : bool = ...,
                    pin_memory : bool = ...,
