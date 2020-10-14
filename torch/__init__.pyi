@@ -32,8 +32,10 @@ class Tensor:
     def item(self) -> Any: ...
     def contiguous(self) -> 'Tensor' : ...
 
+
 class BoolTensor(Tensor):
     def any(self) -> bool: ...
+
 
 class LongTensor(Tensor):
     # @overload
