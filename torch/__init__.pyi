@@ -1,6 +1,6 @@
 
 from typing import (Any, List, Iterator, Union, Tuple, BinaryIO,
-                    overload, Sequence, Optional, TypeVar)
+                    overload, Sequence, Optional, TypeVar, ContextManager)
 
 
 class Tensor:
@@ -119,6 +119,8 @@ def where(mask: ByteTensor, t1: T, t2: T) -> T: ...
 
 def stack(tensors: List[T]) -> T: ...
 def full_like(tensor: T, value: Union[bool, int, float]) -> T: ...
+
+def no_grad() -> ContextManager[Any]: ...
 
 class Size:
     def __init__(self, args: List[int]) -> None: ...
