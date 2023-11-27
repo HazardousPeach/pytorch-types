@@ -12,3 +12,6 @@ class SGD(Optimizer):
 
 class Adam(Optimizer):
     pass
+
+class RMSprop(Optimizer):
+    pass
